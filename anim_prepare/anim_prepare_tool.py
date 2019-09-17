@@ -50,10 +50,6 @@ class Scnforanim(form, base):
         self._saveShot()
         
         
-    def logInShotgun (self):
-        self.sg = sapi.Shotgun("https://esdip.shotgunstudio.com",
-                                  login="tdevelopment",
-                                  password="BM@Developement")
     def shotgunInfo(self):
         self.sequenceButton.clear()
         shots= self.sg.find("Shot", filters=[['project','is', {'type': 'Project','id': 86}]], fields=["code", "sg_status_list"])
