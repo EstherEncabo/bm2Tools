@@ -72,11 +72,7 @@ class MortandoCloth(form, base):
         from maya import mel
         from Framework.plugins.mortando_cloth import reset_code as rc
         mel.eval(rc.code)
-            
-    def logInShotgun (self):
-        self.sg = sapi.Shotgun("https://esdip.shotgunstudio.com",
-                                  login="tdevelopment",
-                                  password="BM@Developement")
+        
     def shotgunInfo(self):
         self.sequenceButton.clear()
         shots= self.sg.find("Shot", filters=[['project','is', {'type': 'Project','id': 86}]], fields=["code", "sg_status_list"])
